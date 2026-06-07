@@ -1,6 +1,12 @@
 const { gql } = require('graphql-tag'); // To parse the string
 
 const typeDefs = `#graphql
+  # =========================================================================
+  # 1. DÉFINITION DES TYPES (Les Modèles de Données)
+  # =========================================================================
+  
+  # Le type Student représente le format exact des données renvoyées par l'API
+  # Le point d'exclamation (!) signifie que le champ est obligatoire (Non-Null)
   type Student {
     id: ID!
     prenom: String!
@@ -17,28 +23,40 @@ const typeDefs = `#graphql
     role: String
   }
 
+  # Format de retour lors d'une connexion réussie
   type AuthPayload {
     token: String!
   }
 
+  # Format de retour lors d'une suppression par lot
   type DeleteResult {
     message: String!
     deletedCount: Int
   }
 
+  # =========================================================================
+  # 2. QUERIES (Lecture de données = GET en REST)
+  # =========================================================================
   type Query {
-    # Public (no auth required in this TP, or auth required depending on requirements)
-    # We will protect all student queries with Auth for demonstration
+    # Renvoie une liste obligatoire d'étudiants (le tableau ne peut pas être null)
     students: [Student!]!
+    
+    # Renvoie un étudiant spécifique (peut être null si introuvable)
     student(id: ID!): Student
+    
+    # Moteur de recherche : on passe un paramètre obligatoire "q"
     searchStudents(q: String!): [Student!]!
   }
 
+  # =========================================================================
+  # 3. MUTATIONS (Modification de données = POST/PUT/DELETE en REST)
+  # =========================================================================
   type Mutation {
-    # Auth
+    # -- Authentification --
+    # Reçoit un nom d'utilisateur et un mot de passe, renvoie un Token JWT
     login(username: String!, password: String!): AuthPayload!
 
-    # Students (Protected)
+    # -- Gestion des Étudiants (Toutes ces opérations nécessitent un Token) --
     addStudent(prenom: String!, nom: String!, email: String!, matricule: String!, filiere: String, niveau: String): Student!
     updateStudent(id: ID!, prenom: String, nom: String, email: String, matricule: String, filiere: String, niveau: String): Student!
     deleteStudent(id: ID!): Student!
