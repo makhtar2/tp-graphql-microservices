@@ -1,12 +1,19 @@
+// Axios agit comme notre "client HTTP" interne. 
+// Il permet à notre Gateway GraphQL de communiquer avec les autres microservices.
 const axios = require('axios');
 
+// Adresses internes de nos microservices (ils pourraient être sur d'autres serveurs)
 const AUTH_URL = 'http://localhost:3001';
 const STUDENT_URL = 'http://localhost:3002/students';
 
-// Helper function to check auth
+// =========================================================================
+// MIDDLEWARE DE SÉCURITÉ
+// =========================================================================
+// Cette fonction est appelée avant chaque action sensible.
+// Elle vérifie si l'utilisateur a été identifié par la Gateway (dans index.js).
 const checkAuth = (context) => {
   if (!context.user) {
-    throw new Error('Unauthorized: You must be logged in to perform this action');
+    throw new Error('Non Autorisé : Vous devez être connecté pour effectuer cette action');
   }
 };
 
