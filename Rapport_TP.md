@@ -40,6 +40,8 @@ node index.js
 ```
 *(Vous devriez voir : GraphQL Gateway is running on http://localhost:4000/graphql)*
 
+![Serveurs en cours d'exécution](./captures/1_serveurs_run.png)
+
 ---
 
 ## 🧪 Étape 3 : Tester l'application comme un pro
@@ -63,6 +65,8 @@ Avant de demander la liste des étudiants, nous devons prouver qui nous sommes.
 2. Cliquez sur le gros bouton bleu **"Login"** (en haut à droite).
 3. Dans le panneau de droite (la réponse), vous allez voir apparaître un texte très long. C'est votre token !
    **Sélectionnez et copiez ce long texte (sans les guillemets).**
+
+![Test de Connexion (Login)](./captures/2_test_login.png)
 
 ### Test B : Présenter son badge (Configurer le Header)
 
@@ -94,6 +98,8 @@ Maintenant que nous sommes connectés, demandons la liste des étudiants.
 2. Cliquez sur le bouton bleu **"GetAllStudents"**.
 3. Magie ! 🎉 À droite, vous verrez apparaître la liste complète des étudiants avec leur prénom et nom.
 
+![Liste des étudiants](./captures/3_test_get_all.png)
+
 ### Test D : Ajouter un nouvel étudiant
 
 Et si nous ajoutions "Charlie" à notre école ?
@@ -110,6 +116,8 @@ Et si nous ajoutions "Charlie" à notre école ?
    ```
 2. Cliquez sur le bouton bleu **"AjouterEtudiant"**.
 3. À droite, vous verrez que Fatou a bien été ajoutée ! 
+
+![Ajout d'un étudiant](./captures/4_test_ajouter.png)
 
 ### Test E : Mettre à jour un étudiant (Update)
 
