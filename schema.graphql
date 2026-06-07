@@ -1,4 +1,15 @@
 # =========================================================================
+# DIAGRAMME D'ARCHITECTURE & EXPLICATIONS
+# =========================================================================
+# L'architecture de cette API repose sur 3 microservices principaux :
+# 1. Gateway GraphQL (Port 4000) : Point d'entrée unique.
+# 2. Auth Service (Port 3001) : Gère l'authentification et émet le token JWT.
+# 3. Student Service (Port 3002) : Gère les opérations CRUD des étudiants.
+#
+# Le diagramme d'architecture visuel (capture d'écran) est disponible
+# dans le dossier du projet sous le nom associé à la capture du diagramme.
+#
+# =========================================================================
 # 1. DÉFINITION DES TYPES (Les Modèles de Données)
 # =========================================================================
 
