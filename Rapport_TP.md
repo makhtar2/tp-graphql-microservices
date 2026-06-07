@@ -1,6 +1,14 @@
 # Rapport de TP : Découverte de GraphQL et Introduction aux Microservices
 
-## 1. Architecture du Système
+## 1. Diagramme d'Architecture Globale
+
+L'image ci-dessous illustre le flux de communication entre la passerelle GraphQL, le service d'authentification et le service métier :
+
+![Schéma d'Architecture](./captures/5_architecture.png)
+
+---
+
+## 2. Architecture du Système
 
 Le projet repose sur une architecture orientée microservices composée de trois entités distinctes :
 
