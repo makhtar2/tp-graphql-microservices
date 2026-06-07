@@ -21,21 +21,21 @@ Ouvrez **3 terminaux différents** dans VSCode (ou dans votre système) et tapez
 
 **Dans le Terminal 1 (pour allumer l'authentification) :**
 ```bash
-cd "tp-graphql-microservices/auth-service"
+cd "ucak-microservices-graphql/auth-service"
 node index.js
 ```
 *(Vous devriez voir : Auth Service is running on http://localhost:3001)*
 
 **Dans le Terminal 2 (pour allumer la gestion des étudiants) :**
 ```bash
-cd "tp-graphql-microservices/student-service"
+cd "ucak-microservices-graphql/student-service"
 node index.js
 ```
 *(Vous devriez voir : Student Service is running on http://localhost:3002)*
 
 **Dans le Terminal 3 (pour allumer la passerelle GraphQL) :**
 ```bash
-cd "tp-graphql-microservices/graphql-gateway"
+cd "ucak-microservices-graphql/graphql-gateway"
 node index.js
 ```
 *(Vous devriez voir : GraphQL Gateway is running on http://localhost:4000/graphql)*
